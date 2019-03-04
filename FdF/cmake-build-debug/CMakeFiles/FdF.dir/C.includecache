@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ggavryly/CLionProjects/FdF/include/FdF.h
+
+/Users/ggavryly/CLionProjects/FdF/src/draw.c
+../include/FdF.h
+/Users/ggavryly/CLionProjects/FdF/include/FdF.h
+
