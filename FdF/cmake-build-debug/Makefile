@@ -150,6 +150,33 @@ src/draw.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/draw.c.s
 .PHONY : src/draw.c.s
 
+src/init.o: src/init.c.o
+
+.PHONY : src/init.o
+
+# target to build an object file
+src/init.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/init.c.o
+.PHONY : src/init.c.o
+
+src/init.i: src/init.c.i
+
+.PHONY : src/init.i
+
+# target to preprocess a source file
+src/init.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/init.c.i
+.PHONY : src/init.c.i
+
+src/init.s: src/init.c.s
+
+.PHONY : src/init.s
+
+# target to generate assembly for a file
+src/init.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/init.c.s
+.PHONY : src/init.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -216,6 +243,9 @@ help:
 	@echo "... src/draw.o"
 	@echo "... src/draw.i"
 	@echo "... src/draw.s"
+	@echo "... src/init.o"
+	@echo "... src/init.i"
+	@echo "... src/init.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

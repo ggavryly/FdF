@@ -4,6 +4,9 @@
 CMakeFiles/FdF.dir/src/draw.c.o: ../include/FdF.h
 CMakeFiles/FdF.dir/src/draw.c.o: ../src/draw.c
 
+CMakeFiles/FdF.dir/src/init.c.o: ../include/FdF.h
+CMakeFiles/FdF.dir/src/init.c.o: ../src/init.c
+
 CMakeFiles/FdF.dir/src/main.c.o: ../include/FdF.h
 CMakeFiles/FdF.dir/src/main.c.o: ../src/main.c
 

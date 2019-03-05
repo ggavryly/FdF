@@ -11,7 +11,8 @@ link_directories(libft minilibx_macos)
 set(SOURCE
         src/draw.c
         src/read.c
-        src/main.c)
+        src/main.c
+        src/init.c)
 
 add_executable(FdF ${SOURCE})
 

@@ -9,22 +9,17 @@ int deal_key(int key, void *param)
 	return (0);
 }
 
-int put_str(int key, void *param)
-{
-	ft_putstr("KAKA\n");
-	return (1);
-}
-
 int main(int ar, char const *av[])
 {
 	t_map   map;
 	t_line  line;
 	int		**cord;
+	int 	gam;
 
 	line.x0 = 500;
 	line.y0 = 500;
-	line.x1 = 911;
-	line.y1 = 100;
+	line.x1 = 997;
+	line.y1 = 997;
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, WIN_WIDTH, WIN_HEIGHT, "FdF");
 	draw_line(&line, &map);

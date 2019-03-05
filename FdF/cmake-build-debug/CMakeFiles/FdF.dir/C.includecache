@@ -6,9 +6,27 @@
 
 #IncludeRegexTransform: 
 
+../include/FdF.h
+
 /Users/ggavryly/CLionProjects/FdF/include/FdF.h
 
 /Users/ggavryly/CLionProjects/FdF/src/draw.c
 ../include/FdF.h
 /Users/ggavryly/CLionProjects/FdF/include/FdF.h
+
+/Users/ggavryly/CLionProjects/FdF/src/init.c
+../include/FdF.h
+/Users/ggavryly/CLionProjects/FdF/include/FdF.h
+
+/Users/ggavryly/CLionProjects/FdF/src/main.c
+../include/FdF.h
+/Users/ggavryly/CLionProjects/FdF/include/FdF.h
+unistd.h
+-
+stdio.h
+-
+
+/Users/ggavryly/CLionProjects/FdF/src/read.c
+FdF.h
+/Users/ggavryly/CLionProjects/FdF/src/FdF.h
 
