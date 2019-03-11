@@ -7,6 +7,20 @@ int deal_key(int key, void *param)
 	return (0);
 }
 
+void	print_cord(t_map *map)
+{
+	int i;
+	int ij;
+
+	i = 0;
+	ij = map->map_h * map->map_w;
+	while (i < ij)
+	{
+		printf("[%d] - {x=%d} {y=%d} {z=%d}\n", i, map->map[i][0], map->map[i][1], map->map[i][2]);
+		i++;
+	}
+}
+
 int main(int ar, char **av)
 {
 	t_map   map;

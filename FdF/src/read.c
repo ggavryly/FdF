@@ -23,13 +23,16 @@ static int analize_w(const char *line)
 		i++;
 	while (line[i])
 	{
-		if (IS_NW(line[i]))
+		if (line[i] != ' ' && line[i] != '\n')
+		{
+			w++;
+			while (line[i] && line[i] != ' ' && line[i] != '\n')
+				i++;
+		}
+		else if (line[i] == ' ')
+			i++;
+		else if (line[i] == '\n')
 			break ;
-		while (line[i] && line[i] != ' ')
-			i++;
-		w++;
-		while (line[i] && line[i] == ' ')
-			i++;
 	}
 	return (w);
 }
@@ -47,19 +50,61 @@ static int analize_h(const char *line)
 			h++;
 		i++;
 	}
+	if (!line[i] && line[i] != '\n')
+		h++;
 	return (h);
+}
+
+int		**init_cords(int **cords, t_map *map)
+{
+	int i;
+
+	i = 0;
+	while (i < map->size_m)
+	{
+		cords[i] = (int *)malloc(sizeof(int) * 1);
+		i++;
+	}
+	return (cords);
+}
+
+int		**read_cords(char *file, t_map *map)
+{
+	int **cords;
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	cords = (int **)malloc(sizeof(int *) * map->size_m + 1);
+	cords[map->size_m] = NULL;
+	cords = init_cords(cords, map);
+	while (j < map->size_m)
+	{
+		if (file[i] != ' ' && file[i] != '\n')
+		{
+			cords[j][0] = ft_atoi(file + i);
+			j++;
+			while (file[i] != ' ' && file[i] != '\n')
+				i++;
+		}
+		else
+			i++;
+	}
+	return (cords);
 }
 
 t_map	*read_file(char *av, t_map *map)
 {
 	char *file;
-	char **cords;
+	int **cords;
 
 	file = file_to_line(av);
-	map->map_h = analize_h(file);
 	map->map_w = analize_w(file);
-	cords = ft_strsplit(file, ' ');
-	map->map = init_map(map->map_h, map->map_w);
+	map->map_h = analize_h(file);
+	map->size_m = map->map_w * map->map_h;
+	cords = read_cords(file, map);
+	map->map = init_map(map);
 	fill_map(map, cords);
 	return (map);
 }

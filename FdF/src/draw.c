@@ -79,21 +79,14 @@ int 	draw_line(t_line *line, t_map *map)
 	return (0);
 }
 
-void	print_cord(t_map *map, int i)
-{
-	printf("[%d][%d] - {x=%d} {y=%d} {z=%d}\n", i, (i & 1) ? (1) : (0), map->map[i][0], map->map[i][1], map->map[i][2]);
-}
-
 void		draw_horizontal(t_map *map)
 {
 	t_line line;
 	int i;
 	int j;
-	int ij;
 
-	ij = map->map_w * map->map_h;
 	i = 0;
-	while (i < ij)
+	while (i < map->size_m)
 	{
 		j = 0;
 		while (j < map->map_w - 1)
@@ -132,6 +125,7 @@ void		draw_vertical(t_map *map)
 
 void		draw_lines(t_map *map)
 {
+	print_cord(map);
 	draw_horizontal(map);
 	draw_vertical(map);
 }

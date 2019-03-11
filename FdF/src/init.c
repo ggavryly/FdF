@@ -12,17 +12,15 @@
 
 #include "FdF.h"
 
-int		**init_map(int map_h, int map_w)
+int		**init_map(t_map *mape)
 {
 	int **map;
 	int i;
-	int ij;
 
 	i = 0;
-	ij = map_h * map_w;
-	map = (int **)malloc(sizeof(int *) * ij + 1);
-	map[ij] = NULL;
-	while (i < ij)
+	map = (int **)malloc(sizeof(int *) * mape->size_m + 1);
+	map[mape->size_m] = NULL;
+	while (i < mape->size_m)
 	{
 		map[i] = (int *)malloc(sizeof(int) * 3);
 		map[i][0] = 0;
@@ -33,26 +31,24 @@ int		**init_map(int map_h, int map_w)
 	return (map);
 }
 
-void	fill_map(t_map *map, char **file)
+void	fill_map(t_map *map, int **file)
 {
 	int i;
 	int j;
-	int ij;
 	int curr_x;
 	int curr_y;
 
 	i = 0;
-	ij = map->map_h * map->map_w;
 	curr_x = 500;
 	curr_y = 500;
-	while (i < ij)
+	while (i < map->size_m)
 	{
 		j = 0;
 		while (j < map->map_w)
 		{
 			map->map[i][0] = curr_x;
 			map->map[i][1] = curr_y;
-			map->map[i][2] = ft_atoi(file[i]);
+			map->map[i][2] = file[i][0];
 			curr_x += 10;
 			i++;
 			j++;
