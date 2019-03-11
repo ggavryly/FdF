@@ -57,9 +57,22 @@ include CMakeFiles/FdF.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/FdF.dir/flags.make
 
+CMakeFiles/FdF.dir/src/draw_3d.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/src/draw_3d.c.o: ../src/draw_3d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/FdF.dir/src/draw_3d.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/src/draw_3d.c.o   -c /Users/ggavryly/CLionProjects/FdF/src/draw_3d.c
+
+CMakeFiles/FdF.dir/src/draw_3d.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/src/draw_3d.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ggavryly/CLionProjects/FdF/src/draw_3d.c > CMakeFiles/FdF.dir/src/draw_3d.c.i
+
+CMakeFiles/FdF.dir/src/draw_3d.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/src/draw_3d.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ggavryly/CLionProjects/FdF/src/draw_3d.c -o CMakeFiles/FdF.dir/src/draw_3d.c.s
+
 CMakeFiles/FdF.dir/src/draw.c.o: CMakeFiles/FdF.dir/flags.make
 CMakeFiles/FdF.dir/src/draw.c.o: ../src/draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/FdF.dir/src/draw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/FdF.dir/src/draw.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/src/draw.c.o   -c /Users/ggavryly/CLionProjects/FdF/src/draw.c
 
 CMakeFiles/FdF.dir/src/draw.c.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/FdF.dir/src/draw.c.s: cmake_force
 
 CMakeFiles/FdF.dir/src/read.c.o: CMakeFiles/FdF.dir/flags.make
 CMakeFiles/FdF.dir/src/read.c.o: ../src/read.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/FdF.dir/src/read.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/FdF.dir/src/read.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/src/read.c.o   -c /Users/ggavryly/CLionProjects/FdF/src/read.c
 
 CMakeFiles/FdF.dir/src/read.c.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/FdF.dir/src/read.c.s: cmake_force
 
 CMakeFiles/FdF.dir/src/main.c.o: CMakeFiles/FdF.dir/flags.make
 CMakeFiles/FdF.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/FdF.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/FdF.dir/src/main.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/src/main.c.o   -c /Users/ggavryly/CLionProjects/FdF/src/main.c
 
 CMakeFiles/FdF.dir/src/main.c.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/FdF.dir/src/main.c.s: cmake_force
 
 CMakeFiles/FdF.dir/src/init.c.o: CMakeFiles/FdF.dir/flags.make
 CMakeFiles/FdF.dir/src/init.c.o: ../src/init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/FdF.dir/src/init.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/FdF.dir/src/init.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/src/init.c.o   -c /Users/ggavryly/CLionProjects/FdF/src/init.c
 
 CMakeFiles/FdF.dir/src/init.c.i: cmake_force
@@ -111,6 +124,7 @@ CMakeFiles/FdF.dir/src/init.c.s: cmake_force
 
 # Object files for target FdF
 FdF_OBJECTS = \
+"CMakeFiles/FdF.dir/src/draw_3d.c.o" \
 "CMakeFiles/FdF.dir/src/draw.c.o" \
 "CMakeFiles/FdF.dir/src/read.c.o" \
 "CMakeFiles/FdF.dir/src/main.c.o" \
@@ -119,13 +133,14 @@ FdF_OBJECTS = \
 # External object files for target FdF
 FdF_EXTERNAL_OBJECTS =
 
+FdF: CMakeFiles/FdF.dir/src/draw_3d.c.o
 FdF: CMakeFiles/FdF.dir/src/draw.c.o
 FdF: CMakeFiles/FdF.dir/src/read.c.o
 FdF: CMakeFiles/FdF.dir/src/main.c.o
 FdF: CMakeFiles/FdF.dir/src/init.c.o
 FdF: CMakeFiles/FdF.dir/build.make
 FdF: CMakeFiles/FdF.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable FdF"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable FdF"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FdF.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

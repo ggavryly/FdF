@@ -12,33 +12,54 @@
 
 #include "FdF.h"
 
-
-
-t_dt 	*read_file(char **av, t_map *map)
+static int analize_w(const char *line)
 {
-	int map_w;
-	int map_h;
 	int i;
-	char *line;
+	int w;
 
-	map_h = 0;
-	map_w = 0;
 	i = 0;
-	line = file_to_line(av[1]);
-	while (line[i])
-	{
-		if (IS_SPC(line[i]))
-			i++;
-		map_w++;
+	w = 0;
+	while (line[i] && line[i] == ' ')
 		i++;
-	}
 	while (line[i])
 	{
 		if (IS_NW(line[i]))
-			map_h++;
+			break ;
+		while (line[i] && line[i] != ' ')
+			i++;
+		w++;
+		while (line[i] && line[i] == ' ')
+			i++;
+	}
+	return (w);
+}
+
+static int analize_h(const char *line)
+{
+	int i;
+	int h;
+
+	i = 0;
+	h = 0;
+	while (line[i])
+	{
+		if (IS_NW(line[i]))
+			h++;
 		i++;
 	}
-	map->map_h = map_h;
-	map->map_w = map_w;
+	return (h);
+}
 
+t_map	*read_file(char *av, t_map *map)
+{
+	char *file;
+	char **cords;
+
+	file = file_to_line(av);
+	map->map_h = analize_h(file);
+	map->map_w = analize_w(file);
+	cords = ft_strsplit(file, ' ');
+	map->map = init_map(map->map_h, map->map_w);
+	fill_map(map, cords);
+	return (map);
 }

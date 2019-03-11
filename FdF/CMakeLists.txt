@@ -9,6 +9,7 @@ include_directories(include)
 link_directories(libft minilibx_macos)
 
 set(SOURCE
+        src/draw_3d.c
         src/draw.c
         src/read.c
         src/main.c

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/FdF.h"
+#include "FdF.h"
 
 static int     test_arg(t_line *line)
 {
@@ -25,84 +25,113 @@ static int     test_arg(t_line *line)
 	return (1);
 }
 
-static void	angle_k(t_line *line, int *d)
+void	draw_dx(t_line *line, t_map *map, int len)
 {
-	if (line->dy <= line->dx)
-	{
-		line->tmp_x = line->x0 + line->px;
-		line->tmp_y = line->y0;
-		line->angle_k = (line->dy << 1) - line->dx;
-		d[0] = (line->dy << 1) - line->dx;
-		d[1] = (line->dy - line->dx) << 1;
-	}
-	else
-	{
-		line->tmp_y = line->y0 + line->py;
-		line->tmp_x = line->x0;
-		line->angle_k = (line->dx << 1) - line->dy;
-		d[0] = (line->dx << 1) - line->dx;
-		d[1] = (line->dx - line->dy) << 1;
-	}
-}
+	int d;
 
-void	draw_dx(t_line *line, t_map *map, int color, int *d)
-{
-	int i;
-
-	i = 1;
-	mlx_pixel_put(map->mlx, map->win, line->x0, line->y0, color);
-	while(i <= line->dx)
+	d = -line->dx;
+	len++;
+	while (len--)
 	{
-		if (line->angle_k > 0)
+		mlx_pixel_put(map->mlx, map->win, line->tmp_x, line->tmp_y, 0xFFF3);
+		line->tmp_x += line->px;
+		d += 2 * line->dy;
+		if (d > 0)
 		{
-			line->angle_k += d[1];
+			d -= 2 * line->dx;
 			line->tmp_y += line->py;
 		}
-		else
-			line->angle_k += d[0];
-		mlx_pixel_put(map->mlx, map->win, line->tmp_x, line->tmp_y, color);
-		i++;
-		line->tmp_x += line->px;
 	}
 }
 
-void	draw_dy(t_line *line, t_map *map, int color, int *d)
+void	draw_dy(t_line *line, t_map *map, int len)
 {
-	int i;
+	int d;
 
-	i = 1;
-	mlx_pixel_put(map->mlx, map->win, line->x0, line->y0, color);
-	while(i <= line->dy)
+	d = -line->dy;
+	len++;
+	while (len--)
 	{
-		if (line->angle_k > 0)
+		mlx_pixel_put(map->mlx, map->win, line->tmp_x, line->tmp_y, 0xFFF3);
+		line->tmp_y += line->py;
+		d += 2 * line->dx;
+		if (d > 0)
 		{
-			line->angle_k += d[1];
+			d -= 2 * line->dy;
 			line->tmp_x += line->px;
 		}
-		else
-			line->angle_k += d[0];
-		mlx_pixel_put(map->mlx, map->win, line->tmp_x, line->tmp_y, color);
-		i++;
-		line->tmp_y += line->py;
 	}
 }
 
 int 	draw_line(t_line *line, t_map *map)
 {
-	int d[2];
+	int len;
 
-	if (test_arg(line))
-	{
-		line->px = line->x1 >= line->x0 ? 1 : -1;
-		line->py = line->y1 >= line->y0 ? 1 : -1;
-		line->dx = abs(line->x1 - line->x0);
-		line->dy = abs(line->y1 - line->y0);
-		angle_k(line, d);
-		if (line->dy <= line->dx)
-			draw_dx(line, map, 30000, d);
-		else
-			draw_dy(line, map, 30000, d);
-		return (1);
-	}
+	len = MAX(line->dx, line->dy);
+	line->tmp_x = line->x0;
+	line->tmp_y = line->y0;
+	if (len == 0)
+		mlx_pixel_put(map->mlx, map->win, line->tmp_x, line->tmp_y, 0xFFF3);
+	if (line->dy <= line->dx)
+		draw_dx(line, map, len);
+	else
+		draw_dy(line, map, len);
 	return (0);
+}
+
+void	print_cord(t_map *map, int i)
+{
+	printf("[%d][%d] - {x=%d} {y=%d} {z=%d}\n", i, (i & 1) ? (1) : (0), map->map[i][0], map->map[i][1], map->map[i][2]);
+}
+
+void		draw_horizontal(t_map *map)
+{
+	t_line line;
+	int i;
+	int j;
+	int ij;
+
+	ij = map->map_w * map->map_h;
+	i = 0;
+	while (i < ij)
+	{
+		j = 0;
+		while (j < map->map_w - 1)
+		{
+			fill_line(&line, map->map[i], map->map[i + 1]);
+			draw_line(&line, map);
+			j++;
+			i++;
+		}
+		i++;
+	}
+}
+
+void		draw_vertical(t_map *map)
+{
+	t_line line;
+	int i;
+	int s;
+	int j;
+
+	j = 0;
+	while (j < map->map_h)
+	{
+		i = j;
+		s = 0;
+		while (s < map->map_h - 1)
+		{
+			fill_line(&line, map->map[i], map->map[i + map->map_w]);
+			draw_line(&line, map);
+			i += map->map_w;
+			s++;
+		}
+		j++;
+	}
+}
+
+void		draw_lines(t_map *map)
+{
+	draw_horizontal(map);
+	draw_vertical(map);
 }
