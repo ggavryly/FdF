@@ -16,59 +16,81 @@ int		**init_map(t_map *mape)
 {
 	int **map;
 	int i;
+	int j;
 
 	i = 0;
-	map = (int **)malloc(sizeof(int *) * mape->size_m + 1);
-	map[mape->size_m] = NULL;
-	while (i < mape->size_m)
+	map = (int **)malloc(sizeof(int *) * mape->map_h + 1);
+	map[mape->map_h] = NULL;
+	while (i < mape->map_h)
 	{
-		map[i] = (int *)malloc(sizeof(int) * 3);
-		map[i][0] = 0;
-		map[i][1] = 0;
-		map[i][2] = 53;
+		j = 0;
+		map[i] = (int *)malloc(sizeof(int) * mape->map_w);
 		i++;
 	}
 	return (map);
 }
 
-void	fill_map(t_map *map, int **file)
+static char	*find_num(char *file, int *n)
+{
+	int i;
+	int flag;
+	int res;
+
+	i = *n;
+	flag = 0;
+	res = 0;
+	while (file[i])
+	{
+		if (file[i] != '\n' && file[i] != ' ')
+		{
+			res = i;
+			flag = 1;
+		}
+		while (file[i] && file[i] != '\n' && file[i] != ' ')
+			i++;
+		while (file[i] && (file[i] == '\n' || file[i] == ' '))
+			i++;
+		if (flag)
+		{
+			*n = i;
+			break;
+		}
+	}
+	return (file + res);
+}
+
+int		**fill_cord(int **cord, t_map *mape, char *file)
 {
 	int i;
 	int j;
-	int curr_x;
-	int curr_y;
+	int n;
 
 	i = 0;
-	curr_x = 500;
-	curr_y = 500;
-	while (i < map->size_m)
+	n = 0;
+	while (i < mape->map_h)
 	{
 		j = 0;
-		while (j < map->map_w)
+		while (j < mape->map_w)
 		{
-			map->map[i][0] = curr_x;
-			map->map[i][1] = curr_y;
-			map->map[i][2] = file[i][0];
-			curr_x += 10;
-			i++;
+			cord[i][j] = ft_atoi(find_num(file, &n));
 			j++;
 		}
-		curr_x = 500;
-		curr_y += 10;
+		i++;
 	}
+	return (cord);
 }
 
-void	fill_line(t_line *line, int *xy0, int *xy1)
+void	fill_line(t_line *line, t_point *xy0, t_point *xy1)
 {
 	double dy;
 	double dx;
 
 	if (!xy0 || !xy1)
 		return;
-	line->x0 = xy0[0];
-	line->y0 = xy0[1];
-	line->x1 = xy1[0];
-	line->y1 = xy1[1];
+	line->x0 = xy0->x;
+	line->y0 = xy0->y;
+	line->x1 = xy1->x;
+	line->y1 = xy1->y;
 	line->dx = abs(line->x1 - line->x0);
 	line->dy = abs(line->y1 - line->y0);
 	line->px = line->x1 >= line->x0 ? 1 : -1;

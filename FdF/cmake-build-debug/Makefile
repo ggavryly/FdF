@@ -123,6 +123,33 @@ FdF/fast:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/build
 .PHONY : FdF/fast
 
+src/cords.o: src/cords.c.o
+
+.PHONY : src/cords.o
+
+# target to build an object file
+src/cords.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/cords.c.o
+.PHONY : src/cords.c.o
+
+src/cords.i: src/cords.c.i
+
+.PHONY : src/cords.i
+
+# target to preprocess a source file
+src/cords.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/cords.c.i
+.PHONY : src/cords.c.i
+
+src/cords.s: src/cords.c.s
+
+.PHONY : src/cords.s
+
+# target to generate assembly for a file
+src/cords.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/cords.c.s
+.PHONY : src/cords.c.s
+
 src/draw.o: src/draw.c.o
 
 .PHONY : src/draw.o
@@ -267,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... FdF"
+	@echo "... src/cords.o"
+	@echo "... src/cords.i"
+	@echo "... src/cords.s"
 	@echo "... src/draw.o"
 	@echo "... src/draw.i"
 	@echo "... src/draw.s"

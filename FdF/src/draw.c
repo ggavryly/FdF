@@ -63,69 +63,43 @@ void	draw_dy(t_line *line, t_map *map, int len)
 	}
 }
 
-int 	draw_line(t_line *line, t_map *map)
+int 	draw_line(t_map *map, t_point *xy0, t_point *xy1)
 {
+	t_line line;
 	int len;
 
-	len = MAX(line->dx, line->dy);
-	line->tmp_x = line->x0;
-	line->tmp_y = line->y0;
+	fill_line(&line, xy0, xy1);
+	len = MAX(line.dx, line.dy);
+	line.tmp_x = line.x0;
+	line.tmp_y = line.y0;
 	if (len == 0)
-		mlx_pixel_put(map->mlx, map->win, line->tmp_x, line->tmp_y, 0xFFF3);
-	if (line->dy <= line->dx)
-		draw_dx(line, map, len);
+		mlx_pixel_put(map->mlx, map->win, line.tmp_x, line.tmp_y, 0xFFF3);
+	if (line.dy <= line.dx)
+		draw_dx(&line, map, len);
 	else
-		draw_dy(line, map, len);
+		draw_dy(&line, map, len);
 	return (0);
-}
-
-void		draw_horizontal(t_map *map)
-{
-	t_line line;
-	int i;
-	int j;
-
-	i = 0;
-	while (i < map->size_m)
-	{
-		j = 0;
-		while (j < map->map_w - 1)
-		{
-			fill_line(&line, map->map[i], map->map[i + 1]);
-			draw_line(&line, map);
-			j++;
-			i++;
-		}
-		i++;
-	}
-}
-
-void		draw_vertical(t_map *map)
-{
-	t_line line;
-	int i;
-	int s;
-	int j;
-
-	j = 0;
-	while (j < map->map_h)
-	{
-		i = j;
-		s = 0;
-		while (s < map->map_h - 1)
-		{
-			fill_line(&line, map->map[i], map->map[i + map->map_w]);
-			draw_line(&line, map);
-			i += map->map_w;
-			s++;
-		}
-		j++;
-	}
 }
 
 void		draw_lines(t_map *map)
 {
+	int i;
+	int j;
+
+	printf("%d - st_x | %d - st_y\n",map->s_x, map->s_y);
+	i = 0;
 	print_cord(map);
-	draw_horizontal(map);
-	draw_vertical(map);
+	while (i < map->map_h)
+	{
+		j = 0;
+		while (j < map->map_w)
+		{
+			if (j < map->map_w - 1)
+				draw_line(map, &map->points[i][j], &map->points[i][j + 1]);
+			if (i < map->map_h - 1)
+				draw_line(map, &map->points[i + 1][j], &map->points[i][j]);
+			j++;
+		}
+		i++;
+	}
 }

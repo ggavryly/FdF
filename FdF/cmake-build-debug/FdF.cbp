@@ -88,6 +88,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/ggavryly/CLionProjects/FdF/src/cords.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/ggavryly/CLionProjects/FdF/src/draw.c">
 			<Option target="FdF"/>
 		</Unit>

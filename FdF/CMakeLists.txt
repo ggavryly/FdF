@@ -13,7 +13,8 @@ set(SOURCE
         src/draw.c
         src/read.c
         src/main.c
-        src/init.c)
+        src/init.c
+        src/cords.c)
 
 add_executable(FdF ${SOURCE})
 
