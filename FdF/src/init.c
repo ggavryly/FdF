@@ -80,17 +80,15 @@ int		**fill_cord(int **cord, t_map *mape, char *file)
 	return (cord);
 }
 
-void	fill_line(t_line *line, t_point *xy0, t_point *xy1)
+void	fill_line(t_line *line, t_point xy0, t_point xy1)
 {
 	double dy;
 	double dx;
 
-	if (!xy0 || !xy1)
-		return;
-	line->x0 = xy0->x;
-	line->y0 = xy0->y;
-	line->x1 = xy1->x;
-	line->y1 = xy1->y;
+	line->x0 = xy0.x;
+	line->y0 = xy0.y;
+	line->x1 = xy1.x;
+	line->y1 = xy1.y;
 	line->dx = abs(line->x1 - line->x0);
 	line->dy = abs(line->y1 - line->y0);
 	line->px = line->x1 >= line->x0 ? 1 : -1;
@@ -100,4 +98,24 @@ void	fill_line(t_line *line, t_point *xy0, t_point *xy1)
 	line->angle_kd = (fabs(dy / dx));
 	line->angle_kd *= 2;
 	line->angle_kd--;
+	line->color = xy0.color;
 }
+
+void 	map_default(t_map *map)
+{
+	map->s_x = 0;
+	map->s_y = 0;
+	map->zoom = 10;
+	map->angle_x = 30;
+	map->angle_y = -30;
+	map->angle_z = -30;
+	map->cos_x = cos(PI / 180 * map->angle_x);
+	map->sin_x = sin(PI / 180 * map->angle_x);
+	map->cos_y = cos(PI / 180 * map->angle_y);
+	map->sin_y = sin(PI / 180 * map->angle_y);
+	map->cos_z = cos(PI / 180 * map->angle_z);
+	map->sin_z = sin(PI / 180 * map->angle_z);
+}
+
+
+

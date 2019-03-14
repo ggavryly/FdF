@@ -86,7 +86,7 @@ t_point **read_cords(int **file, t_map *map)
 			cords[i][j].x = j;
 			cords[i][j].y = i;
 			cords[i][j].z = file[i][j];
-			cords[i][j].color = 0xFF0000;
+			cords[i][j].color = 0xFFFFFF;
 			j++;
 		}
 		i++;
@@ -105,6 +105,9 @@ t_map	*read_file(char *av, t_map *map)
 	map_c = init_map(map);
 	map_c = fill_cord(map_c, map, file);
 	map->points = read_cords(map_c, map);
+	map->set = (t_point **)malloc(sizeof(t_point *) * map->map_h + 1);
+	map->set[map->map_h] = NULL;
+	map->set = init_cords(map->set, map);
 	free(file);
 	return (map);
 }

@@ -12,6 +12,16 @@
 
 #include "../include/FdF.h"
 
+void	iso(t_map *map)
+{
+	map->cos_x = cos(0.523599);
+	map->cos_y = map->cos_x;
+	map->cos_z = map->cos_x;
+	map->sin_x = sin(0.523599);
+	map->sin_y = map->sin_x;
+	map->sin_z = map->sin_x;
+}
+
 void	fill_cords(t_map *map)
 {
 	int i;
