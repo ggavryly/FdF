@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../include/FdF.h
+/Users/ggavryly/CLionProjects/FdF/include/FdF.h
 
-/Users/ggavryly/CLionProjects/FdF/src/main.c
-FdF.h
-/Users/ggavryly/CLionProjects/FdF/src/FdF.h
+/Users/ggavryly/CLionProjects/FdF/src/cords.c
+../include/FdF.h
+/Users/ggavryly/CLionProjects/FdF/include/FdF.h
 

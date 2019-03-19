@@ -12,69 +12,73 @@
 
 #include "FdF.h"
 
-void	pixel_put(t_map *map, t_line *line)
+void	pixel_put(t_map *map, t_line line)
 {
-	if  (line->tmp_x < WIN_WIDTH && line->tmp_x >= 0
-	&& line->tmp_y < WIN_HEIGHT && line->tmp_y >= 0)
-		map->img_arr[line->tmp_y * WIN_WIDTH + line->tmp_x] = line->color;
+	if  (line.tmp_x < WIN_WIDTH && line.tmp_x >= 0 &&
+	line.tmp_y < WIN_HEIGHT && line.tmp_y >= 0)
+	{
+		map->img_arr[line.tmp_y * WIN_WIDTH + line.tmp_x] = 0xFFFFFF & find_color(line);
+	}
 
 }
 
-void	draw_dx(t_line *line, t_map *map, int len)
+void	draw_dx(t_line line, t_map *map, int i)
 {
-	int d;
+	int d = -line.dx;
 
-	d = -line->dx;
-	len++;
-	while (len--)
+	i++;
+	while(i--)
 	{
 		pixel_put(map, line);
-		line->tmp_x += line->px;
-		d += 2 * line->dy;
-		if (d > 0)
-		{
-			d -= 2 * line->dx;
-			line->tmp_y += line->py;
+		line.tmp_x += line.px;
+		d += 2 * line.dy;
+		if (d > 0) {
+			d -= 2 * line.dx;
+			line.tmp_y += line.py;
 		}
 	}
 }
 
-void	draw_dy(t_line *line, t_map *map, int len)
+void	draw_dy(t_line line, t_map *map, int i)
 {
-	int d;
+	int d = -line.dy;
 
-	d = -line->dy;
-	len++;
-	while (len--)
+	i++;
+	while(i--)
 	{
 		pixel_put(map, line);
-		line->tmp_y += line->py;
-		d += 2 * line->dx;
+		line.tmp_y += line.py;
+		d += 2 * line.dx;
 		if (d > 0)
 		{
-			d -= 2 * line->dy;
-			line->tmp_x += line->px;
+			d -= 2 * line.dy;
+			line.tmp_x += line.px;
 		}
 	}
 }
 
-int 	draw_line(t_map *map, t_point xy0, t_point xy1)
+void line(t_map *map, t_point pt1, t_point pt2)
 {
 	t_line line;
-	int len;
 
-	fill_line(&line, xy0, xy1);
-	len = MAX(line.dx, line.dy);
-	line.tmp_x = line.x0;
-	line.tmp_y = line.y0;
-	if (len == 0)
-		pixel_put(map, &line);
+	fill_line(&line, pt1, pt2);
+	int i = MAX(line.dx, line.dy);
+	if (i == 0)
+		pixel_put(map, line);
 	if (line.dy <= line.dx)
-		draw_dx(&line, map, len);
+	{
+		line.start = pt1.x;
+		line.end = pt2.x;
+		draw_dx(line, map, i);
+	}
 	else
-		draw_dy(&line, map, len);
-	return (0);
+	{
+		line.start = pt1.y;
+		line.end = pt2.y;
+		draw_dy(line, map, i);
+	}
 }
+
 
 void		draw_lines(t_map *map)
 {
@@ -88,9 +92,9 @@ void		draw_lines(t_map *map)
 		while (j < map->map_w)
 		{
 			if (j < map->map_w - 1)
-				draw_line(map, map->set[i][j], map->set[i][j + 1]);
+				line(map, map->points[i][j], map->points[i][j + 1]);
 			if (i < map->map_h - 1)
-				draw_line(map, map->set[i][j], map->set[i + 1][j]);
+				line(map, map->points[i][j], map->points[i + 1][j]);
 			j++;
 		}
 		i++;

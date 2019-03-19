@@ -19,17 +19,15 @@ static int analize_w(const char *line)
 
 	i = 0;
 	w = 0;
-	while (line[i] && line[i] == ' ')
-		i++;
-	while (line[i])
+	while (line[i] != '\n')
 	{
-		if (line[i] != ' ' && line[i] != '\n')
+		if (line[i] != ' ' && line[i] != '\n' && line[i] != '\t')
 		{
 			w++;
 			while (line[i] && line[i] != ' ' && line[i] != '\n')
 				i++;
 		}
-		else if (line[i] == ' ')
+		else if (line[i] == ' ' || line[i] == '\t')
 			i++;
 		else if (line[i] == '\n')
 			break ;
@@ -68,46 +66,27 @@ t_point		**init_cords(t_point **cords, t_map *map)
 	return (cords);
 }
 
-t_point **read_cords(int **file, t_map *map)
+t_point **read_cords(t_map *map)
 {
 	t_point **cords;
-	int i;
-	int j;
 
-	i = 0;
 	cords = (t_point **)malloc(sizeof(t_point *) * map->map_h + 1);
 	cords[map->map_h] = NULL;
 	cords = init_cords(cords, map);
-	while (i < map->map_h)
-	{
-		j = 0;
-		while (j < map->map_w)
-		{
-			cords[i][j].x = j;
-			cords[i][j].y = i;
-			cords[i][j].z = file[i][j];
-			cords[i][j].color = 0xFFFFFF;
-			j++;
-		}
-		i++;
-	}
 	return (cords);
 }
 
 t_map	*read_file(char *av, t_map *map)
 {
 	char	*file;
-	int 	**map_c;
+	char 	**cords;
 
 	file = file_to_line(av);
 	map->map_w = analize_w(file);
 	map->map_h = analize_h(file);
-	map_c = init_map(map);
-	map_c = fill_cord(map_c, map, file);
-	map->points = read_cords(map_c, map);
-	map->set = (t_point **)malloc(sizeof(t_point *) * map->map_h + 1);
-	map->set[map->map_h] = NULL;
-	map->set = init_cords(map->set, map);
+	cords = cords_split(file, map);
+	map->points = read_cords(map);
+	fill_cord(map, cords);
 	free(file);
 	return (map);
 }

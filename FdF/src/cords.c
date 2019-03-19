@@ -12,35 +12,62 @@
 
 #include "../include/FdF.h"
 
-void	iso(t_map *map)
+double 		perce(int start, int end, int curr)
 {
-	map->cos_x = cos(0.523599);
-	map->cos_y = map->cos_x;
-	map->cos_z = map->cos_x;
-	map->sin_x = sin(0.523599);
-	map->sin_y = map->sin_x;
-	map->sin_z = map->sin_x;
+	double place;
+	double dist;
+
+	place = curr - start;
+	dist = end - start;
+	return ((dist == 0) ? 1.0 : (place / dist));
 }
 
-void	fill_cords(t_map *map)
+int 		get_light(int start, int end, double percentage)
 {
-	int i;
-	int j;
+	return ((int)((1 - percentage) * start + percentage * end));
+}
+
+int 		find_color(t_line curr)
+{
+	int     rgb[3];
+	double  perc;
+
+	if (curr.dx >= curr.dy)
+		perc = perce(curr.start, curr.end, curr.tmp_x);
+	else
+		perc = perce(curr.start, curr.end, curr.tmp_y);
+	rgb[0] = get_light((curr.p0_color >> 16) & 0xFF, (curr.p1_color >> 16) & 0xFF, perc);
+	rgb[1] = get_light((curr.p0_color >> 8) & 0xFF, (curr.p1_color >> 8) & 0xFF, perc);
+	rgb[2] = get_light((curr.p0_color) & 0xFF, (curr.p1_color) & 0xFF, perc);
+	return ((rgb[0]<< 16) | (rgb[1] << 8) | rgb[2]);
+}
+
+char		**cords_split(char *file, t_map *map)
+{
+	int			i;
+	size_t		j;
+	char		**cords;
+	int 		num;
 
 	i = 0;
-	while (i < map->map_h)
+	j = 0;
+	num = map->map_w * map->map_h;
+	cords = (char **)malloc(sizeof(char *) * num + 1);
+	cords[num] = NULL;
+	while (i < num)
 	{
-		j = 0;
-		while (j < map->map_w)
-		{
-
-			map->points[i][j].x = (j - map->map_w / 2) * map->zoom;
-			map->points[i][j].y = (i - map->map_h / 2) * map->zoom;
-			map->points[i][j].x += map->s_x + WIN_WIDTH / 2;
-			map->points[i][j].y += map->s_y + WIN_HEIGHT / 2;
+		while ((*file == ' ' || *file == '\t' || *file == '\n') && *file != '\0')
+			file++;
+		while (file[j] != '\n' && file[j] != ' ' && *file != '\t' && *file != '\0')
 			j++;
-		}
+		if (!(*file))
+			break;
+		cords[i] = (char *)malloc((sizeof(char) * (j + 1)));
+		cords[i][j] = '\0';
+		ft_strncpy(cords[i], file, j);
+		file += j;
+		j = 0;
 		i++;
 	}
+	return (cords);
 }
-
