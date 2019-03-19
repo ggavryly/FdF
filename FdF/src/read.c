@@ -76,6 +76,27 @@ t_point **read_cords(t_map *map)
 	return (cords);
 }
 
+void	fill_color(t_map *map)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < map->map_h)
+	{
+		j = 0;
+		while (j < map->map_w)
+		{
+			map->points[i][j].color = find_color_z(map->points[i][j].z,
+					map->min_alt, map->max_alt);
+			j++;
+		}
+		i++;
+	}
+
+
+}
+
 t_map	*read_file(char *av, t_map *map)
 {
 	char	*file;
@@ -87,6 +108,8 @@ t_map	*read_file(char *av, t_map *map)
 	cords = cords_split(file, map);
 	map->points = read_cords(map);
 	fill_cord(map, cords);
+	fill_color(map);
+	free_2_dim(cords);
 	free(file);
 	return (map);
 }

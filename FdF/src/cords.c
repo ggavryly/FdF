@@ -42,6 +42,18 @@ int 		find_color(t_line curr)
 	return ((rgb[0]<< 16) | (rgb[1] << 8) | rgb[2]);
 }
 
+int 		find_color_z(int curr, int start, int end)
+{
+	int     rgb[3];
+	double  perc;
+
+	perc = perce(start, end, curr);
+	rgb[0] = get_light((YELLOW >> 16) & 0xFF, (LIGHT_BLUE >> 16) & 0xFF, perc);
+	rgb[1] = get_light((YELLOW >> 8) & 0xFF, (LIGHT_BLUE >> 8) & 0xFF, perc);
+	rgb[2] = get_light((YELLOW) & 0xFF, (LIGHT_BLUE) & 0xFF, perc);
+	return ((rgb[0]<< 16) | (rgb[1] << 8) | rgb[2]);
+}
+
 char		**cords_split(char *file, t_map *map)
 {
 	int			i;

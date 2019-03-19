@@ -204,6 +204,33 @@ src/draw_3d.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/draw_3d.c.s
 .PHONY : src/draw_3d.c.s
 
+src/exit.o: src/exit.c.o
+
+.PHONY : src/exit.o
+
+# target to build an object file
+src/exit.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/exit.c.o
+.PHONY : src/exit.c.o
+
+src/exit.i: src/exit.c.i
+
+.PHONY : src/exit.i
+
+# target to preprocess a source file
+src/exit.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/exit.c.i
+.PHONY : src/exit.c.i
+
+src/exit.s: src/exit.c.s
+
+.PHONY : src/exit.s
+
+# target to generate assembly for a file
+src/exit.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/src/exit.c.s
+.PHONY : src/exit.c.s
+
 src/init.o: src/init.c.o
 
 .PHONY : src/init.o
@@ -303,6 +330,9 @@ help:
 	@echo "... src/draw_3d.o"
 	@echo "... src/draw_3d.i"
 	@echo "... src/draw_3d.s"
+	@echo "... src/exit.o"
+	@echo "... src/exit.i"
+	@echo "... src/exit.s"
 	@echo "... src/init.o"
 	@echo "... src/init.i"
 	@echo "... src/init.s"

@@ -14,7 +14,8 @@ set(SOURCE
         src/read.c
         src/main.c
         src/init.c
-        src/cords.c)
+        src/cords.c
+        src/exit.c)
 
 add_executable(FdF ${SOURCE})
 

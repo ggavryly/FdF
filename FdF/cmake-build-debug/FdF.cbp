@@ -97,6 +97,9 @@
 		<Unit filename="/Users/ggavryly/CLionProjects/FdF/src/draw_3d.c">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/ggavryly/CLionProjects/FdF/src/exit.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/ggavryly/CLionProjects/FdF/src/init.c">
 			<Option target="FdF"/>
 		</Unit>

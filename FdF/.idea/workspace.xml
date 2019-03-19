@@ -21,41 +21,23 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4048607">
+    <splitter split-orientation="horizontal" split-proportion="0.4976489">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="644">
-                  <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+                <state relative-caret-position="1247">
+                  <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/draw.c">
+            <entry file="file://$PROJECT_DIR$/src/exit.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="632">
-                  <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test_maps/pyramide.fdf">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="720">
-                  <caret line="115" selection-start-line="115" selection-end-line="115" />
+                <state relative-caret-position="405">
+                  <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -63,17 +45,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/read.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1054">
-                  <caret line="92" selection-start-line="92" selection-end-line="92" />
+                <state relative-caret-position="451">
+                  <caret line="98" selection-start-line="98" selection-end-line="98" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/draw_3d.c">
+            <entry file="file://$PROJECT_DIR$/src/draw.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="554">
-                  <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -81,17 +63,30 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/cords.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="568">
-                  <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+                <state relative-caret-position="423">
+                  <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/draw_3d.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="540">
+                  <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/include/FdF.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1278">
-                  <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+                <state relative-caret-position="996">
+                  <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
                   <folding>
                     <element signature="e#922#958#0" expanded="true" />
                   </folding>
@@ -99,11 +94,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/init.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="479">
-                  <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+                <state relative-caret-position="594">
+                  <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
@@ -122,6 +117,9 @@
       <find>s</find>
       <find>0</find>
       <find>10</find>
+      <find>Yellow</find>
+      <find>PURPLE</find>
+      <find>B</find>
     </findStrings>
     <replaceStrings>
       <replace>way</replace>
@@ -130,6 +128,11 @@
       <replace>.</replace>
       <replace>file</replace>
       <replace>1</replace>
+      <replace>LIGHT_GR</replace>
+      <replace>SAND</replace>
+      <replace>ORANGE</replace>
+      <replace>B</replace>
+      <replace>A</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -139,31 +142,32 @@
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/libft/src/ft_strsplit.c" />
         <option value="$PROJECT_DIR$/libft/include/libft.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/test_maps/julia.fdf" />
         <option value="$PROJECT_DIR$/test_maps/elem-fract.fdf" />
         <option value="$PROJECT_DIR$/test_maps/pentenegpos.fdf" />
         <option value="$USER_HOME$/Desktop/nkuchina/test_maps/pylone.fdf" />
-        <option value="$PROJECT_DIR$/src/read.c" />
         <option value="$USER_HOME$/Desktop/nkuchina/test_maps/mars.fdf" />
         <option value="$PROJECT_DIR$/test_maps/basictest.fdf" />
         <option value="$PROJECT_DIR$/test_maps/plat.fdf" />
         <option value="$USER_HOME$/Desktop/nkuchina/test_maps/42.fdf" />
         <option value="$PROJECT_DIR$/test_maps/42.fdf" />
-        <option value="$PROJECT_DIR$/src/main.c" />
-        <option value="$PROJECT_DIR$/src/draw_3d.c" />
-        <option value="$PROJECT_DIR$/include/FdF.h" />
+        <option value="$PROJECT_DIR$/test_maps/pyra.fdf" />
         <option value="$PROJECT_DIR$/src/init.c" />
+        <option value="$PROJECT_DIR$/src/read.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/exit.c" />
+        <option value="$PROJECT_DIR$/include/FdF.h" />
+        <option value="$PROJECT_DIR$/src/main.c" />
         <option value="$PROJECT_DIR$/src/draw.c" />
         <option value="$PROJECT_DIR$/src/cords.c" />
-        <option value="$PROJECT_DIR$/test_maps/pyra.fdf" />
+        <option value="$PROJECT_DIR$/src/draw_3d.c" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="63" />
-    <option name="y" value="41" />
-    <option name="width" value="2011" />
+    <option name="x" value="448" />
+    <option name="y" value="23" />
+    <option name="width" value="1544" />
     <option name="height" value="1337" />
   </component>
   <component name="ProjectView">
@@ -171,6 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,11 +183,25 @@
               <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
               <item name="FdF" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FdF" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FdF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FdF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FdF" type="462c0819:PsiDirectoryNode" />
+              <item name="test_maps" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -216,7 +235,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="FdF" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../test_maps/pyramide.fdf" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FdF" TARGET_NAME="FdF" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FdF" RUN_TARGET_NAME="FdF">
+    <configuration name="FdF" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../test_maps/10-2.fdf" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FdF" TARGET_NAME="FdF" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FdF" RUN_TARGET_NAME="FdF">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -272,32 +291,36 @@
       <workItem from="1552919783680" duration="6837000" />
       <workItem from="1552930289777" duration="12565000" />
       <workItem from="1552946625114" duration="3438000" />
-      <workItem from="1552950520487" duration="8077000" />
+      <workItem from="1552950520487" duration="8150000" />
+      <workItem from="1552980627432" duration="82000" />
+      <workItem from="1552981853699" duration="2000" />
+      <workItem from="1553023069240" duration="10963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198930000" />
+    <option name="totallyTimeSpent" value="210050000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="63" y="41" width="2011" height="1337" extended-state="0" />
+    <frame x="782" y="23" width="1544" height="1337" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14626715" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15046604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4393093" visible="true" weight="0.31164658" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5606907" side_tool="true" visible="true" weight="0.31164658" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.39480692" visible="true" weight="0.31164658" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6051931" side_tool="true" visible="true" weight="0.31164658" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49358973" weight="0.32931727" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49134487" weight="0.32931727" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49905002" weight="0.32931727" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.38547486" weight="0.32931727" />
+      <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49873033" weight="0.32931727" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.36218375" weight="0.39036146" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -328,6 +351,22 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/cords.c</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/read.c</url>
+          <line>110</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mlx/main.c" />
@@ -379,13 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_maps/julia.fdf" />
     <entry file="file://$PROJECT_DIR$/test_maps/elem.fdf">
       <provider selected="true" editor-type-id="text-editor" />
@@ -409,13 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="423" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_maps/10-2.fdf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -453,16 +478,6 @@
         <state relative-caret-position="-9" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/FdF.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-          <folding>
-            <element signature="e#922#958#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_maps/mars.fdf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -480,22 +495,43 @@
     <entry file="file://$PROJECT_DIR$/test_maps/pnp_flat.fdf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_maps/pylone.fdf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="96" lean-forward="true" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/draw.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_maps/pyramide.fdf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_maps/10-2.fdf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bass24-osx/bass.h">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exit.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/init.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_maps/pyra.fdf">
       <provider selected="true" editor-type-id="text-editor">
@@ -504,38 +540,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c">
+    <entry file="file://$PROJECT_DIR$/test_maps/pylone.fdf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        <state relative-caret-position="450">
+          <caret line="30" column="96" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cords.c">
+    <entry file="file://$PROJECT_DIR$/include/FdF.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/draw_3d.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+        <state relative-caret-position="996">
+          <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+          <folding>
+            <element signature="e#922#958#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/read.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="451">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/init.c">
+    <entry file="file://$PROJECT_DIR$/src/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+        <state relative-caret-position="1247">
+          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cords.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/draw.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/draw_3d.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
         </state>
       </provider>
     </entry>

@@ -12,8 +12,22 @@
 
 #include "FdF.h"
 
+int 	zoom_opt(t_map *map)
+{
+	int zoom;
+
+	if (map->map_h < map->map_w)
+		zoom = (WIN_WIDTH / 2) / map->map_h;
+	else
+		zoom = (WIN_HEIGHT / 2) / map->map_w;
+	if (zoom < 1)
+		zoom = 1;
+	return (zoom);
+}
+
 void	iso(t_map *map)
 {
+	map->zoom = zoom_opt(map);
 	map->s_x =(int)(WIN_WIDTH / 2.0);
 	map->s_y = (int)(WIN_HEIGHT / 2.0);
 	map->angle_x = -30;
@@ -33,18 +47,18 @@ void	fill_cord(t_map *map, char **file)
 	int j;
 
 	i = 0;
+	map->min_alt = 0;
+	map->max_alt = 0;
 	while (i < map->map_h)
 	{
 		j = 0;
 		while (j < map->map_w)
 		{
 			map->points[i][j].z = ft_atoi(file[i * map->map_w + j]);
-			if (map->points[i][j].z > 0)
-				map->points[i][j].color = 0xFF0000;
-			else if (map->points[i][j].z < 0)
-				map->points[i][j].color = 0x0000FF;
-			else if (map->points[i][j].z  == 0)
-				map->points[i][j].color = 0xFFFFFF;
+			if (map->points[i][j].z < map->min_alt)
+				map->min_alt = map->points[i][j].z;
+			else if (map->points[i][j].z > map->max_alt)
+				map->max_alt = map->points[i][j].z;
 			j++;
 		}
 		i++;
@@ -61,19 +75,6 @@ void	fill_line(t_line *line, t_point xy0, t_point xy1)
 	line->dy = abs(xy1.y - xy0.y);
 	line->px = xy1.x >= xy0.x ? 1 : -1;
 	line->py = xy1.y >= xy0.y ? 1 : -1;
-}
-
-int 	zoom_opt(t_map *map)
-{
-	int zoom;
-
-	if (map->map_h < map->map_w)
-		zoom = (WIN_WIDTH / 2) / map->map_h;
-	else
-		zoom = (WIN_HEIGHT / 2) / map->map_w;
-	if (zoom < 1)
-		zoom = 1;
-	return (zoom);
 }
 
 void 	map_default(t_map *map)

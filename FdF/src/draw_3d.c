@@ -53,7 +53,7 @@ int 	isometria(t_map *map)
 	int i;
 	int j;
 	double xyz[3];
-	char buf[125];
+	char buf[50];
 
 	i = 0;
 	ft_bzero(map->img_arr, WIN_HEIGHT * WIN_WIDTH * (sizeof(int)));
@@ -75,8 +75,16 @@ int 	isometria(t_map *map)
 		i++;
 	}
 	draw_lines(map);
-	sprintf(buf,"%d %d %d", map->angle_x, map->angle_y, map->angle_z);
 	mlx_put_image_to_window(map->mlx, map->win, map->img, 0, 0);
-	mlx_string_put(map->mlx, map->win, 10 , 10, 0xFF00FF, buf);
+	mlx_string_put(map->mlx, map->win, 10 , 10, 0xFFFFFF, "INSTRUCTIONS:");
+	mlx_string_put(map->mlx, map->win, 10 , 30, 0xFFFFFF, "Move: ");
+	mlx_string_put(map->mlx, map->win, 10 , 50, 0xFFFFFF, "Rotation: (X) w|s");
+	mlx_string_put(map->mlx, map->win, 110 , 70, 0xFFFFFF, "(Y) a|d");
+	mlx_string_put(map->mlx, map->win, 110 , 90, 0xFFFFFF, "(Z) q|e");
+	mlx_string_put(map->mlx, map->win, 10 , 110, 0xFFFFFF, "Zoom: +|-");
+	mlx_string_put(map->mlx, map->win, 10 , 130, 0xFFFFFF, "PATRIOTIC_GRADIENT - U");
+	ft_bzero(buf, 75);
+	sprintf(buf,"| X - %d | Y - %d | Z - %d |", map->angle_x, map->angle_y, map->angle_z);
+	mlx_string_put(map->mlx, map->win, (WIN_WIDTH / 2) - 200, 10, 0xFFFFFF, buf);
 	return (0);
 }

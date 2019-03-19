@@ -17,7 +17,8 @@ void	pixel_put(t_map *map, t_line line)
 	if  (line.tmp_x < WIN_WIDTH && line.tmp_x >= 0 &&
 	line.tmp_y < WIN_HEIGHT && line.tmp_y >= 0)
 	{
-		map->img_arr[line.tmp_y * WIN_WIDTH + line.tmp_x] = 0xFFFFFF & find_color(line);
+		map->img_arr[line.tmp_y * WIN_WIDTH + line.tmp_x] =0xFFFFFF
+				& find_color(line);
 	}
 
 }

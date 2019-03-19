@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FdF.dir/src/main.c.o"
   "CMakeFiles/FdF.dir/src/init.c.o"
   "CMakeFiles/FdF.dir/src/cords.c.o"
+  "CMakeFiles/FdF.dir/src/exit.c.o"
   "FdF.pdb"
   "FdF"
 )

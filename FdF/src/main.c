@@ -39,29 +39,24 @@ int deal_key(int key, t_map *map)
 {
 	if (key == ESC)
 	{
+		free_points(map);
 		exit(0);
 	}
 	mlx_clear_window(map->mlx, map->win);
 	if (key == 126)
 		map->s_y -= 5;
 	else if (key == 123)
-		map->s_x -= 5;
+		map->s_x -= 10;
 	else if (key == 125)
-		map->s_y += 5;
+		map->s_y += 10;
 	else if (key == 124)
 		map->s_x += 5;
 	else if (key == 34)
 		iso(map);
 	else if (key == 24 && map->zoom)
-	{
 		map->zoom++;
-		printf("%f - zoom\n", map->zoom);
-	}
 	else if (key == 27 && map->zoom > 1)
-	{
 		map->zoom--;
-		printf("%f - zoom\n", map->zoom);
-	}
 	else if (key == UP || key == DOWN
 	|| key == LEFT || key == RIGHT || key == 12 || key == 14)
 		key_spin(key, map);
@@ -69,28 +64,10 @@ int deal_key(int key, t_map *map)
 	return (0);
 }
 
-int	exit_k(void)
+int	exit_k(t_map *map)
 {
+	free_points(map);
 	exit(0);
-}
-
-void	print_cord(t_map *map)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < map->map_h)
-	{
-		j = 0;
-		while (j < map->map_w)
-		{
-			printf("%d ", map->points[i][j].z);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
 }
 
 int main(int ar, char **av)
@@ -99,9 +76,7 @@ int main(int ar, char **av)
 	int		put1;
 	int		put2;
 	int		put3;
-	char	buf[10000];
 
-	bzero(buf, 10000);
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, WIN_WIDTH, WIN_HEIGHT, "FdF");
 	map.img = mlx_new_image(map.mlx, WIN_WIDTH, WIN_HEIGHT);

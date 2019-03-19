@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/ggavryly/CLionProjects/FdF/src/cords.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/cords.c.o"
   "/Users/ggavryly/CLionProjects/FdF/src/draw.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/draw.c.o"
   "/Users/ggavryly/CLionProjects/FdF/src/draw_3d.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/draw_3d.c.o"
+  "/Users/ggavryly/CLionProjects/FdF/src/exit.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/exit.c.o"
   "/Users/ggavryly/CLionProjects/FdF/src/init.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/init.c.o"
   "/Users/ggavryly/CLionProjects/FdF/src/main.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/main.c.o"
   "/Users/ggavryly/CLionProjects/FdF/src/read.c" "/Users/ggavryly/CLionProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/src/read.c.o"
