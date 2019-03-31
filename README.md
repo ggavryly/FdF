@@ -12,4 +12,4 @@ make re \
 
 
 # Preview:
- https://gph.is/g/aNPMeK4
+ ![](fdf.gif)
