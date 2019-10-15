@@ -8,7 +8,7 @@ https://github.com/ggavryly/FdF/blob/master/fdf.en.pdf
 
 # Usage:
 ```
-make re \
+make re
 ./fdf test_maps/42.fdf
 ```
 
